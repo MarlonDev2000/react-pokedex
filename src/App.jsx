@@ -25,9 +25,11 @@ const App = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        P
-        <img src={logoPoke} alt="" />
-        kédex
+        <div className={styles.headerLogo}>
+          P
+          <img src={logoPoke} alt="" />
+          kédex
+        </div>
       </div>
       {pokemons.length > 0 &&
         <>
