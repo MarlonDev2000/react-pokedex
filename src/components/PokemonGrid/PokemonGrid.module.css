@@ -1,0 +1,58 @@
+.grid {
+  display: flex;
+  width: 420px;
+  height: 280px;
+  margin: 30px;
+  border-radius: 50px;
+  transition: all ease-in-out 0.5s;
+}
+
+.grid:hover {
+  transform: scale(1.05);
+}
+
+.contentGrid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30px;
+  gap: 1.5rem;
+  width: 50%;
+}
+
+.leftSideTitle {
+  font-size: 28px;
+  color: #fff;
+}
+
+.leftSideElements span {
+  display: block;
+  margin-bottom: 10px;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  width: 50%;
+}
+
+.rightSideImage img {
+  max-width: 80%;
+}
