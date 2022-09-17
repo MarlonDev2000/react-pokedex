@@ -1,7 +1,7 @@
 .grid {
   display: flex;
   width: 420px;
-  height: 280px;
+  height: 290px;
   margin: 30px;
   border-radius: 50px;
   transition: all ease-in-out 0.5s;
