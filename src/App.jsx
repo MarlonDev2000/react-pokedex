@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import styles from './App.module.css'
 import logoPoke from './images/pokeball.png'
+import pokeLoad from './images/loading.gif'
 
 import { api } from './Api'
 import { PokemonGrid } from './components/PokemonGrid'
 
 const App = () => {
 
+  const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])
 
   useEffect(()=>{
@@ -15,8 +17,10 @@ const App = () => {
 
   const loadPokemons = async () => {
     try {
+      setLoading(true)
       let json = await api.getAllPokemons()
       setPokemons(json)
+      setLoading(false)
     } catch (error) {
       setPokemons([])
     }
@@ -31,7 +35,13 @@ const App = () => {
           kédex
         </div>
       </div>
-      {pokemons.length > 0 &&
+      {loading &&
+        <div className={styles.loading}>
+          <h1>Buscando Pokémons</h1>
+          <img src={pokeLoad} alt="" />
+        </div>
+      }
+      {!loading && pokemons.length > 0 &&
         <>
           <div className={styles.content}>
             {console.log(pokemons)}
